@@ -20,12 +20,14 @@ export const quadtreePromise = new Promise(function(resolve, reject) {
   }, (error, response) => {
 
     if (error) {
-      reject(error);
+      console.log(error);
+      reject('bart went wrong');
     } else {
       parseString(response.content, parseOptions, (err, result) => {
 
         if (err) {
-          reject(err)
+          console.log(err);
+          reject('parseString went wrong');
         } else {
           const stationsTree = quadtree()
           .x(d => parseFloat(d['gtfs_latitude']))

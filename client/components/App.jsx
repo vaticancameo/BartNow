@@ -24,7 +24,7 @@ export default class App extends React.Component {
   }
 
   returnNearestStation(loc) {
-    if (loc) {
+    if (loc && Object.keys(this.state.quadtree).length) {
       return this.state.quadtree.find(loc.lat, loc.lng);
     }
   }

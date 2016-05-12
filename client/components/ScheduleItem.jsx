@@ -7,23 +7,28 @@ export default class ScheduleItem extends React.Component {
 
   render() {
     const { schedule } = this.props;
-    console.log(schedule.estimate);
-    let estimate;
+
+    let times;
     if (schedule) {
-      estimate = schedule.estimate.map((est) => {
-        return (
-            <span>{est.minutes}&nbsp;</span>
-        );
-      });
+      const estimates = schedule.estimate;
+      if (Array.isArray(estimates)) {
+        times = estimates.map((est, i) => {
+          return (<span key={i} className="time-car">{est.minutes}{isNaN(est.minutes)?'':'min'}</span>);
+        })
+      } else {
+        times = (<span className="time-car">{estimates.minutes}{isNaN(estimates.minutes)?'':'min'}</span>);
+      }
+
     }
 
     return (
-      <li>
-        <strong>{schedule.abbreviation}</strong>
-        {estimate}
+      <li className="train">
+        <span className="head-car">{schedule.abbreviation}</span>
+        {times}
       </li>
     );
   }
+
 }
 
 ScheduleItem.propTypes = {

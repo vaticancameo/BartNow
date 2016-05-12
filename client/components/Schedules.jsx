@@ -23,15 +23,16 @@ export default class Schedules extends React.Component {
 
   render() {
     const {departures} = this.state;
+    
     let scheduleItems;
     if (departures) {
       scheduleItems = departures.map((route) => {
-        return <ScheduleItem schedule={route} />;
+        return <ScheduleItem key={route.abbreviation} schedule={route} />;
       });
     }
 
     return (
-      <ul>
+      <ul className="trains">
        {scheduleItems}
       </ul>
     );
