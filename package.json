@@ -1,0 +1,17 @@
+{
+  "name": "BartNow",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "setting": "meteor --settings settings.json"
+  },
+  "dependencies": {
+    "d3-quadtree": "^0.7.2",
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.0.2",
+    "react-addons-pure-render-mixin": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "xml2js": "^0.4.16",
+    "xml2json": "^0.9.1"
+  }
+}
