@@ -3,7 +3,7 @@ import { HTTP } from 'meteor/http';
 import { quadtree } from 'd3-quadtree';
 import { parseString } from 'xml2js';
 
-const stationsURL = 'http://api.bart.gov/api/stn.aspx';
+const stationsURL = 'https://api.bart.gov/api/stn.aspx';
 
 const parseOptions = {
     explicitArray: false,

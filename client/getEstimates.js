@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { HTTP } from 'meteor/http';
 import { parseString } from 'xml2js';
 
-const estimatesURL = 'http://api.bart.gov/api/etd.aspx';
+const estimatesURL = 'https://api.bart.gov/api/etd.aspx';
 
 const parseOptions = {
     explicitArray: false,
