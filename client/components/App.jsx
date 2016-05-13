@@ -35,6 +35,7 @@ export default class App extends React.Component {
 
     return (
       <div>
+        <SearchBar station={station} />
         <Schedules station={station} />
       </div>
     );

@@ -7,9 +7,10 @@ export default class SearchBar extends React.Component {
 
   render() {
     const {station} = this.props;
-    // console.log(station);
     return (
-      <h1>{station && station.name}</h1>
+      <div className="header">
+        <h1>{station && station.name}</h1>
+      </div>
     );
   }
 }

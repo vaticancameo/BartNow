@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 export default class ScheduleItem extends React.Component {
   constructor() {
@@ -10,20 +11,22 @@ export default class ScheduleItem extends React.Component {
 
     let times;
     if (schedule) {
-      const estimates = schedule.estimate;
-      if (Array.isArray(estimates)) {
-        times = estimates.map((est, i) => {
-          return (<span key={i} className="time-car">{est.minutes}{isNaN(est.minutes)?'':'min'}</span>);
+      const estimate = schedule.estimate;
+      if (Array.isArray(estimate)) {
+        times = estimate.map((est, i) => {
+          const className = classnames('time-car car', est.color);
+          return (<span key={i} className={className}>{est.minutes}{(i===0 && !isNaN(est.minutes))?' min':''}</span>);
         })
       } else {
-        times = (<span className="time-car">{estimates.minutes}{isNaN(estimates.minutes)?'':'min'}</span>);
+        const className = classnames('time-car car', estimate.color);
+        times = (<span className={className}>{`${estimate.minutes}${isNaN(estimate.minutes)?'':' min'}`}</span>);
       }
 
     }
 
     return (
       <li className="train">
-        <span className="head-car">{schedule.abbreviation}</span>
+        <span className="head-car car">{schedule.destination}</span>
         {times}
       </li>
     );

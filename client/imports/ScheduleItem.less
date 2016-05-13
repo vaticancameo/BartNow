@@ -1,0 +1,76 @@
+@import './colors.less';
+
+@car-height: 40px;
+
+.underline {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+}
+
+
+ul.trains {
+  display: block;
+  padding-top: 10px;
+}
+
+li.train {
+  width: 100%;
+  margin: 3px 1%;
+
+  .car {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 14%;
+    height: @car-height;
+
+    margin: 1%;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -3px @dark-bart;
+    background-color: @light;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: @car-height;
+
+    &.RED {
+      .underline;
+      border-bottom-color: @red;
+    }
+
+    &.ORANGE {
+      .underline;
+      border-bottom-color: @orange;
+    }
+
+    &.YELLOW {
+      .underline;
+      border-bottom-color: @yellow;
+    }
+
+    &.GREEN {
+      .underline;
+      border-bottom-color: @green;
+    }
+
+    &.BLUE {
+      .underline;
+      border-bottom-color: @blue;
+    }
+
+  }
+
+  span:nth-child(2) {
+    width: 26%;
+  }
+
+  .head-car {
+    width: 36%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    text-align: right;
+    border-top-left-radius: 60%;
+    border-bottom-left-radius: 25%;
+  }
+
+}
