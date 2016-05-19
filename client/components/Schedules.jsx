@@ -1,6 +1,6 @@
 import React from 'react';
 
-import getEstimates from '../getEstimates.js';
+import getEstimates from '../utils/getEstimates.js';
 import ScheduleItem from './ScheduleItem';
 
 export default class Schedules extends React.Component {

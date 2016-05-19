@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { quadtreePromise } from '../quadtree.js';
+import quadtreePromise from '../utils/quadtree.js';
 import SearchBar from './SearchBar';
 import Schedules from './Schedules';
 
@@ -16,7 +16,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    quadtreePromise.then((tree) => {
+    quadtreePromise().then((tree) => {
       this.setState({quadtree: tree});
     }).catch((err) => {
       console.log(err);

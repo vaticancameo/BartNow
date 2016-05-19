@@ -2,3 +2,4 @@ node_modules/
 settings.json
 .meteor
 .DS_Store
+npm-debug.log
